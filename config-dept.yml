@@ -3,11 +3,6 @@ spring:
     active: dev
 
 ---
-spring:
-  profiles: dev
-  application:
-    name: springcloud-config-dept-dev
-
 server:
   port: 8001
 
@@ -15,8 +10,9 @@ server:
 # org.gjt.mm.mysql.Driver
 # com.mysql.cj.jdbc.Driver
 spring:
+  profiles: dev
   application:
-    name: springcloud-provider-dept
+    name: springcloud-config-provider-dept-dev
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource # 数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -50,11 +46,6 @@ info:
 
 
 ---
-spring:
-  profiles: test
-  application:
-    name: springcloud-config-dept-test
-
 server:
   port: 8001
 
@@ -62,8 +53,9 @@ server:
 # org.gjt.mm.mysql.Driver
 # com.mysql.cj.jdbc.Driver
 spring:
+  profiles: test
   application:
-    name: springcloud-provider-dept
+    name: springcloud-config-provider-dept-test
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource # 数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
